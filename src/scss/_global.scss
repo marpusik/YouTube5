@@ -35,6 +35,11 @@ body {
     line-height: 160%;
     text-align: center;
     color: $secondaryDark;
+    transition: background .3s;
+    &:hover {
+      background: $secondary;
+      color: #ffffff;
+    }
   }
 }
 // Animations
