@@ -39,15 +39,32 @@
 .tab {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 74px;
   &__item {
     flex: 0 1 48%;
-    &.left__item{
+    &.left__item {
       flex: 0 1 380px;
     }
   }
   &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: $primary;
+    span {
+      color: $secondary;
+    }
   }
   &__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    color: $primaryLight;
+    margin-top: 24px;
   }
   &__subtitle {
   }
