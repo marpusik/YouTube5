@@ -1,0 +1,62 @@
+.section__tabs {
+  background: #fdf9f8;
+  padding-top: 100px;
+  padding-bottom: 140px;
+}
+.tabs {
+  width: 100%;
+  &__header {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+    &-item {
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 180%;
+      color: $primary;
+      position: relative;
+      &.active {
+        &:after {
+          position: absolute;
+          content: "";
+          height: 3px;
+          width: 100%;
+          background: $secondary;
+          left: 0;
+          bottom: -8px;
+        }
+      }
+    }
+  }
+  &__content {
+  }
+}
+.tab {
+  display: flex;
+  align-items: center;
+  &__item {
+    flex: 0 1 48%;
+    &.left__item{
+      flex: 0 1 380px;
+    }
+  }
+  &__title {
+  }
+  &__text {
+  }
+  &__subtitle {
+  }
+  &__tags {
+  }
+  &__tag {
+  }
+  &__btn {
+  }
+}
+.btn {
+}

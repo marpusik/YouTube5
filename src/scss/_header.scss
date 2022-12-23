@@ -2,6 +2,9 @@
 // Navbar
 nav {
   padding-top: 32px;
+  @media (max-width: $breakpoint768) {
+    padding-top: 18px;
+  }
 }
 .navbar {
   display: flex;

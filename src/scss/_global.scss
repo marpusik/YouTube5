@@ -59,6 +59,13 @@ body {
     padding: 10px 30px;
     font-size: 16px;
   }
+  @media (max-width: $breakpoint992) {
+    padding: 6px 22px;
+    font-size: 14px;
+  }
+  @media (max-width: $breakpoint480) {
+    flex-shrink: 0;
+  }
   &:hover {
     background: $secondaryDark;
     color: #ffffff;
