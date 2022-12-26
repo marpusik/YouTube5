@@ -1,0 +1,43 @@
+.section {
+  &__price {
+    margin-top: 40px;
+  }
+}
+.price {
+  display: flex;
+  align-items: center;
+  &__item {
+    flex: 0 1 50%;
+    &.right__item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__list {
+  }
+  &__list-item {
+  }
+  &__btn {
+  }
+  &__info {
+  }
+}
+.list {
+  &__item-1 {
+  }
+  &__item-2 {
+  }
+  &__item-3 {
+  }
+  &__item-4 {
+  }
+  &__item-5 {
+  }
+}
+.btn {
+}
+.coats {
+}
+.period {
+}
