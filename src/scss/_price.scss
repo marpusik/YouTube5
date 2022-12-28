@@ -6,12 +6,15 @@
 .price {
   display: flex;
   align-items: center;
+  height: 500px;
   &__item {
     flex: 0 1 50%;
     &.right__item{
       display: flex;
       justify-content: center;
       align-items: center;
+      background: red;
+      height: 100%;
     }
   }
   &__list {
@@ -38,6 +41,12 @@
 .btn {
 }
 .coats {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 80%;
+  letter-spacing: -0.03em;
+  color: $primary;
 }
 .period {
 }
