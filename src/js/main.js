@@ -30,7 +30,6 @@ function burgerMenu() {
 burgerMenu()
 const getTemplate = (data = [], placeholder, selectedId) => {
   let text = placeholder ?? 'placeholder не указан'
-
   const items = data.map(item => {
     let cls = ''
     if (item.id === selectedId) {
@@ -60,13 +59,11 @@ class Select {
     this.$el = document.querySelector(selector)
     this.options = options
     this.selectedId = options.selectedId
-
     this.render()
     this.setup()
   }
-
   render() {
-    const { placeholder, data } = this.options
+    const {placeholder, data} = this.options
     this.$el.classList.add('select')
     this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId)
   }
@@ -76,52 +73,42 @@ class Select {
     this.$arrow = this.$el.querySelector('[data-type="arrow"]')
     this.$value = this.$el.querySelector('[data-type="value"]')
   }
-
   clickHandler(event) {
-    const { type } = event.target.dataset
+    const {type} = event.target.dataset
     if (type === 'input') {
       this.toggle()
     } else if (type === 'item') {
       const id = event.target.dataset.id
       this.select(id)
-    }  else if (type === 'backdrop') {
+    } else if (type === 'backdrop') {
       this.close()
     }
   }
-
   get isOpen() {
     return this.$el.classList.contains('open')
   }
-
   get current() {
     return this.options.data.find(item => item.id === this.selectedId)
   }
-
   select(id) {
     this.selectedId = id
     this.$value.textContent = this.current.value
-
-    this.$el.querySelectorAll(`[data-type="item"]`).forEach( el => el.classList.remove('selected'))
+    this.$el.querySelectorAll(`[data-type="item"]`).forEach(el => el.classList.remove('selected'))
     this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected')
-
     this.options.onSelect ? this.options.onSelect(this.current) : null
     this.close()
   }
-
   toggle() {
     this.isOpen ? this.close() : this.open()
   }
-
   open() {
     this.$el.classList.add('open')
     this.$arrow.classList.add('open')
   }
-
   close() {
     this.$el.classList.remove('open')
     this.$arrow.classList.remove('open')
   }
-
   destroy() {
     this.$el.removeEventListener('click', this.clickHandler)
     this.$el.innerHTML = ''
@@ -141,7 +128,7 @@ const select = new Select('#select', {
     input.value = item.value
   }
 })
-function tabs(headerSelector, tabSelector, contentSelector, activeClass, display='flex') {
+function tabs(headerSelector, tabSelector, contentSelector, activeClass, display = 'flex') {
   const header = document.querySelector(headerSelector),
     tab = document.querySelectorAll(tabSelector),
     content = document.querySelectorAll(contentSelector)
@@ -164,7 +151,7 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
     if (target.classList.contains(tabSelector.replace(/\./, '')) ||
       target.parentNode.classList.contains(tabSelector.replace(/\./, ''))) {
       tab.forEach((item, i) => {
-        if ( target == item || target.parentNode == item ) {
+        if (target == item || target.parentNode == item) {
           hideTabContent()
           showTabContent(i)
         }
@@ -172,9 +159,28 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
     }
   })
 }
-
 // ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
 // ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
 // ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
 // ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
-tabs( '.tabs__header' ,'.tabs__header-item', '.tabs__content-item', 'active')
+tabs('.tabs__header', '.tabs__header-item', '.tabs__content-item', 'active')
+const swiper = new Swiper('.swiper', {
+  // Navigation arrows
+  navigation: {
+    nextEl: '.next__btn',
+    prevEl: '.prev__btn',
+  },
+  //   // Responsive breakpoints
+  //   breakpoints: {
+  //   // when window width is >= 320px
+  //   320: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 20
+  //   },
+  //   // when window width is >= 480px
+  //   480: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 30
+  //   },
+  // }
+});
