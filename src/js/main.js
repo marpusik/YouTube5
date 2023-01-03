@@ -159,28 +159,10 @@ function tabs(headerSelector, tabSelector, contentSelector, activeClass, display
     }
   })
 }
-// ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
-// ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
-// ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
-// ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content-item', 'active')
 const swiper = new Swiper('.swiper', {
-  // Navigation arrows
   navigation: {
     nextEl: '.next__btn',
     prevEl: '.prev__btn',
   },
-  //   // Responsive breakpoints
-  //   breakpoints: {
-  //   // when window width is >= 320px
-  //   320: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 20
-  //   },
-  //   // when window width is >= 480px
-  //   480: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 30
-  //   },
-  // }
 });
